@@ -1,0 +1,82 @@
+.form__labelText {
+    width: 100%;
+    max-width: 150px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.form__field {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.form__button {
+    font-weight: bold;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(9, 177, 177);
+    color: white;
+}
+
+.form__button:hover {
+    background-color: hsl(180, 90%, 20%);
+}
+
+.form__button:active {
+    background-color: hsl(180, 90%, 10%);
+}
+
+.form__fieldset {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+
+.form__legend {
+    font-weight: bold;
+    background-color: rgb(9, 177, 177);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.form__score {
+    text-align: center;
+    font-size: larger;
+    border: 2px solid rgb(9, 177, 177);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.form__score:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.form__legend--gothic {
+    background-image: url(https://a.allegroimg.com/s1024/0cf334/9d5be1684fc882f1c38190e9b38e);
+    border: 5px solid black;
+}
+
+.form__button--gothic {
+    background-image: url(https://a.allegroimg.com/s1024/0cf334/9d5be1684fc882f1c38190e9b38e);
+    border: 5px solid black;
+}
+
+.form__fieldset--gothic {
+    background-image: url(https://a.allegroimg.com/s1024/0cf334/9d5be1684fc882f1c38190e9b38e);
+    border: 5px solid black;
+}
+
+.form__score--gothic {
+    background-image: url(https://a.allegroimg.com/s1024/0cf334/9d5be1684fc882f1c38190e9b38e);
+    border: 5px solid black;
+}
