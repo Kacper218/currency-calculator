@@ -1,52 +1,58 @@
-let amountElement = document.querySelector(".js-amount")
-let exchangeElement = document.querySelector(".js-exchange")
-let formElement = document.querySelector(".js-form")
-let scoreElement = document.querySelector(".js-score")
-let selectElement = document.querySelector(".js-select")
-let exchangeText = document.querySelector(".js-exchangeText")
-let finalAmountElement = document.querySelector(".js-finalAmount")
-let finalCurrencyElement = document.querySelector(".js-finalCurrency")
+{
+    const pickCurrency = () => {
 
-let body = document.querySelector(".body")
-let formFieldset = document.querySelector(".form__fieldset")
-let formLegend = document.querySelector(".form__legend")
-let formButton = document.querySelector(".form__button")
-let formScore = document.querySelector(".form__score")
+        const body = document.querySelector(".body")
+        const formFieldset = document.querySelector(".form__fieldset")
+        const formLegend = document.querySelector(".form__legend")
+        const formButton = document.querySelector(".form__button")
+        const formScore = document.querySelector(".form__score")
 
-selectElement.addEventListener("click", () => {
-    switch (selectElement.value) {
-        case "euro":
-            exchangeText.innerText = "Podaj aktualny kurs euro";
-            finalCurrencyElement.innerText = "euro"
-            exchangeElement.value = 4.51;
-            formFieldset.classList.toggle("form__fieldset--gothic")
-            formLegend.classList.toggle("form__legend--gothic")
-            formButton.classList.toggle("form__button--gothic")
-            formScore.classList.toggle("form__score--gothic")
-            body.classList.toggle("body--white")
-            break;
-        case "ruda":
-            exchangeText.innerText = "Podaj aktualny kurs bryłki rudy";
-            finalCurrencyElement.innerText = "bryłek rudy"
-            exchangeElement.value = 21.37;
-            formFieldset.classList.toggle("form__fieldset--gothic")
-            formLegend.classList.toggle("form__legend--gothic")
-            formButton.classList.toggle("form__button--gothic")
-            formScore.classList.toggle("form__score--gothic")
-            body.classList.toggle("body--white")
-            break;
+        const selectElement = document.querySelector(".js-select")
+        const finalCurrencyElement = document.querySelector(".js-finalCurrency")
+        const exchangeElement = document.querySelector(".js-exchange")
+        const exchangeText = document.querySelector(".js-exchangeText")
+
+        switch (selectElement.value) {
+            case "euro":
+                exchangeText.innerText = "Podaj aktualny kurs euro";
+                finalCurrencyElement.innerText = "euro"
+                formFieldset.classList.toggle("form__fieldset--gothic")
+                formLegend.classList.toggle("form__legend--gothic")
+                formButton.classList.toggle("form__button--gothic")
+                formScore.classList.toggle("form__score--gothic")
+                body.classList.toggle("body--white")
+                return exchangeElement.value = 4.51;
+            case "ruda":
+                exchangeText.innerText = "Podaj aktualny kurs bryłki rudy";
+                finalCurrencyElement.innerText = "bryłek rudy"
+                formFieldset.classList.toggle("form__fieldset--gothic")
+                formLegend.classList.toggle("form__legend--gothic")
+                formButton.classList.toggle("form__button--gothic")
+                formScore.classList.toggle("form__score--gothic")
+                body.classList.toggle("body--white")
+                return exchangeElement.value = 21.37;
+        }
     }
+    const calculateResault = (event) => {
+        event.preventDefault()
 
-})
+        const amountElement = document.querySelector(".js-amount")
+        const exchangeElement = document.querySelector(".js-exchange")
+        const score = amountElement.value / exchangeElement.value
+        const scoreElement = document.querySelector(".js-score")
+        const finalAmountElement = document.querySelector(".js-finalAmount")
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault()
+        scoreElement.innerText = score.toFixed(2);
+        finalAmountElement.innerText = amountElement.value;
+    }
+    const init = () => {
 
-    let amount = amountElement.value
-    let exchange = exchangeElement.value
+        const formElement = document.querySelector(".js-form")
+        const selectElement = document.querySelector(".js-select")
 
-    let score = amount / exchange
+        selectElement.addEventListener("click", pickCurrency)
 
-    scoreElement.innerText = score.toFixed(2);
-    finalAmountElement.innerText = amount;
-})
+        formElement.addEventListener("submit", calculateResault)
+    }
+    init();
+}
