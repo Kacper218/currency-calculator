@@ -19,6 +19,7 @@
     border: none;
     padding: 10px;
     border-radius: 10px;
+    border: 3px solid white;
     background-color: rgb(9, 177, 177);
     color: white;
 }
@@ -32,8 +33,9 @@
 }
 
 .form__fieldset {
+    background-color: white;
     padding: 20px;
-    border: 3px solid #ccc;
+    border: 5px solid rgb(9, 177, 177);
     border-radius: 10px;
     margin: 20px 0;
 }
@@ -47,36 +49,39 @@
     border-radius: 10px;
 }
 
-
 .form__score {
+    color: white;
+    background-color: rgb(9, 177, 177);
     text-align: center;
     font-size: larger;
-    border: 3px solid rgb(9, 177, 177);
+    border: 3px solid white;
     padding: 10px;
     margin: 10px 0;
     border-radius: 10px;
 }
 
 .form__score:hover {
-    background-color: rgb(228, 228, 228);
+    background-color: hsl(180, 90%, 20%);
 }
 
 .form__legend--gothic {
-    background-image: url(https://a.allegroimg.com/s1024/0cf334/9d5be1684fc882f1c38190e9b38e);
+    background-image: url("../images/gothic.jpg");
     border: 5px solid black;
 }
 
 .form__button--gothic {
-    background-image: url(https://a.allegroimg.com/s1024/0cf334/9d5be1684fc882f1c38190e9b38e);
+    background-image: url("../images/gothic.jpg");
     border: 5px solid black;
 }
 
 .form__fieldset--gothic {
-    background-image: url(https://a.allegroimg.com/s1024/0cf334/9d5be1684fc882f1c38190e9b38e);
+    background-image: url("../images/gothic.jpg");
+    background-position: 50% 70%;
     border: 5px solid black;
+
 }
 
 .form__score--gothic {
-    background-image: url(https://a.allegroimg.com/s1024/0cf334/9d5be1684fc882f1c38190e9b38e);
+    background-image: url("../images/gothic.jpg");
     border: 5px solid black;
 }
