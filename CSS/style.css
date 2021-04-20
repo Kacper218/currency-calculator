@@ -17,6 +17,13 @@ html {
     background-image: url("../images/background.jpg");
 }
 
+@media (max-width: 767px) {
+    .body {
+        background-position: bottom;
+    }
+}
+
+
 .body--white {
     color: white;
 }
