@@ -1,5 +1,6 @@
 {
-    const gothicThemeToggle = (formFieldset, formLegend, formButton, formScore, body) => {
+    const gothicThemeToggle = (formFieldset, formLegend, formButton, formScore, body, scoreElement) => {
+        scoreElement.innerText = "N/a";
         formFieldset.classList.toggle("form__fieldset--gothic")
         formLegend.classList.toggle("form__legend--gothic")
         formButton.classList.toggle("form__button--gothic")
@@ -17,18 +18,19 @@
         const selectElement = document.querySelector(".js-select")
         const finalCurrencyElement = document.querySelector(".js-finalCurrency")
         const exchangeElement = document.querySelector(".js-exchange")
+        const scoreElement = document.querySelector(".js-score")
         const exchangeText = document.querySelector(".js-exchangeText")
 
         switch (selectElement.value) {
             case "euro":
                 exchangeText.innerText = "Podaj aktualny kurs euro";
                 finalCurrencyElement.innerText = "euro"
-                gothicThemeToggle(formFieldset, formLegend, formButton, formScore, body);
+                gothicThemeToggle(formFieldset, formLegend, formButton, formScore, body, scoreElement);
                 return exchangeElement.value = 4.51;
             case "ruda":
                 exchangeText.innerText = "Podaj aktualny kurs bryłki rudy";
                 finalCurrencyElement.innerText = "bryłek rudy"
-                gothicThemeToggle(formFieldset, formLegend, formButton, formScore, body);
+                gothicThemeToggle(formFieldset, formLegend, formButton, formScore, body, scoreElement);
                 return exchangeElement.value = 21.37;
         }
     }
