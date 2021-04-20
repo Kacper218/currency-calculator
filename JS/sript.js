@@ -49,7 +49,7 @@
         const formElement = document.querySelector(".js-form")
         const selectElement = document.querySelector(".js-select")
 
-        selectElement.addEventListener("click", pickCurrency)
+        selectElement.addEventListener("change", pickCurrency)
 
         formElement.addEventListener("submit", calculateResault)
     }
